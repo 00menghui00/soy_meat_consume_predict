@@ -1,0 +1,26 @@
+sklearn.ensemble模块：集成模块，内置randomforest等算法
+sklearn.metrics模块：内置各种用于评价模型的指标，如mse，a_s
+sklearn.model_selection模块：用于调参，切分数据集，验证
+
+Series：数据结构，一维数组
+DataFrame:数据结构，二维列表
+DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False)：排序函数
+
+plt.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon=True, FigureClass=<class 'matplotlib.figure.Figure'>, clear=False, tight_layout=None, constrained_layout=False)#绘制图形窗口
+plt.barh(y, width, height=0.8, left=None, *, align='center', color=None, edgecolor=None, linewidth=1, tick_label=None, xerr=None, yerr=None, capsize=None, error_kw=None, log=False, orientation='horizontal', label='', **kwargs)#水平条形图
+plt.bar：竖直条形图
+
+布尔索引：pandas的内置方法
+data['province'] == province 会生成一个布尔序列。例如，如果 data 数据框有 5 行，而 province 变量的值是 A，布尔序列可能会是 [True, False, True, False, True]，表示哪些行的 province 列值与 A 相等。
+当将 data[(data['province'] == province)] 这样写时，Pandas 会自动将布尔序列作为筛选条件，只保留 True 所在的行。每一行的 True 和 False 值告诉 Pandas 是保留还是丢弃该行，从而实现筛选功能
+
+df.unique()：数据去重
+pd.replace：对dataframe或series的值直接替换为新的值
+np.where:用于基于条件来选择数组中的元素。它可以用于返回满足条件的元素索引，或者根据条件对元素进行替换
+
+GridSearchCV是sklearn的内置类：通过遍历超参数对模型调优，并返回最优模型配置
+GridSearchCV(estimator, param_grid, scoring=None, cv=None, n_jobs=None, verbose=0, refit=True, return_train_score=False)
+
+param_grid：超参数网格，排列组合不同超参数，遍历找出最优配置
+
+pandas 中，使用 [] 选择数据时，是否加 '' 主要取决于要选择的对象类型:传递列名列表时，需要用引号括起来;传递列表时不用引号（常用的features)
